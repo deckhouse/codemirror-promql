@@ -10,7 +10,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-import { AggregateExpr, And, BinaryExpr, BoolModifier, Bottomk, CountValues, Eql, EqlSingle, FunctionCall, FunctionCallBody, Gte, Gtr, Identifier, LabelMatchers, Lss, Lte, MatrixSelector, Neq, Or, ParenExpr, Quantile, QuotedLabelMatcher, QuotedLabelName, StepInvariantExpr, SubqueryExpr, Topk, UnaryExpr, Unless, UnquotedLabelMatcher, VectorSelector, } from '@prometheus-io/lezer-promql';
+import { AggregateExpr, And, BinaryExpr, BoolModifier, Bottomk, CountValues, Eql, EqlSingle, FunctionCall, FunctionCallBody, Gte, Gtr, Identifier, LabelMatchers, Lss, Lte, MatrixSelector, Neq, OKTop, Or, OPTop, ParenExpr, Quantile, QuotedLabelMatcher, QuotedLabelName, StepInvariantExpr, SubqueryExpr, Topk, UnaryExpr, Unless, UnquotedLabelMatcher, VectorSelector, } from '@prometheus-io/lezer-promql';
 import { containsAtLeastOneChild } from './path-finder';
 import { getType } from './type';
 import { buildLabelMatchers } from './matcher';
@@ -122,7 +122,7 @@ export class Parser {
         }
         this.expectType(params[params.length - 1], ValueType.vector, 'aggregation expression');
         // get the parameter of the aggregation operator
-        if (aggregateOp.type.id === Topk || aggregateOp.type.id === Bottomk || aggregateOp.type.id === Quantile) {
+        if (aggregateOp.type.id === Topk || aggregateOp.type.id === Bottomk || aggregateOp.type.id === Quantile || aggregateOp.type.id === OKTop || aggregateOp.type.id === OPTop) {
             this.expectType(params[0], ValueType.scalar, 'aggregation parameter');
         }
         if (aggregateOp.type.id === CountValues) {

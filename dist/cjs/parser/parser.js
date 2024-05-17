@@ -136,7 +136,7 @@ var Parser = /** @class */ (function () {
         }
         this.expectType(params[params.length - 1], types_1.ValueType.vector, 'aggregation expression');
         // get the parameter of the aggregation operator
-        if (aggregateOp.type.id === lezer_promql_1.Topk || aggregateOp.type.id === lezer_promql_1.Bottomk || aggregateOp.type.id === lezer_promql_1.Quantile) {
+        if (aggregateOp.type.id === lezer_promql_1.Topk || aggregateOp.type.id === lezer_promql_1.Bottomk || aggregateOp.type.id === lezer_promql_1.Quantile || aggregateOp.type.id === lezer_promql_1.OKTop || aggregateOp.type.id === lezer_promql_1.OPTop) {
             this.expectType(params[0], types_1.ValueType.scalar, 'aggregation parameter');
         }
         if (aggregateOp.type.id === lezer_promql_1.CountValues) {

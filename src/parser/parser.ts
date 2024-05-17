@@ -32,7 +32,11 @@ import {
   Lte,
   MatrixSelector,
   Neq,
+  OKCumSum,
+  OKTop,
   Or,
+  OPCumSum,
+  OPTop,
   ParenExpr,
   Quantile,
   QuotedLabelMatcher,
@@ -167,7 +171,7 @@ export class Parser {
     }
     this.expectType(params[params.length - 1], ValueType.vector, 'aggregation expression');
     // get the parameter of the aggregation operator
-    if (aggregateOp.type.id === Topk || aggregateOp.type.id === Bottomk || aggregateOp.type.id === Quantile) {
+    if (aggregateOp.type.id === Topk || aggregateOp.type.id === Bottomk || aggregateOp.type.id === Quantile || aggregateOp.type.id === OKTop || aggregateOp.type.id === OPTop) {
       this.expectType(params[0], ValueType.scalar, 'aggregation parameter');
     }
     if (aggregateOp.type.id === CountValues) {
