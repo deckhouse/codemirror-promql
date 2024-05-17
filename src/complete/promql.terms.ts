@@ -354,6 +354,42 @@ export const functionIdentifierTerms = [
     type: 'function',
   },
   {
+    label: 'ok_defined',
+    detail: 'function',
+    info: 'Replaces vector component value with 0 (if value is outdated e.q older than ActualInterval + 1 minute) or 1 otherwise',
+    type: 'function',
+  },
+  {
+    label: 'ok_replace_nan',
+    detail: 'function',
+    info: 'Replaces vector component value with the second parameter `Value` if value is outdated (older than ActualInterval + 1 minute), third parameter is used to cut off values before now-`Ms` (milliseconds)',
+    type: 'function',
+  },
+  {
+    label: 'ok_zero_if_none',
+    detail: 'function',
+    info: 'Replaces vector component value with 0 if it is empty',
+    type: 'function',
+  },
+  {
+    label: 'op_defined',
+    detail: 'function',
+    info: 'Replaces vector component value with 0 (if value is outdated e.q older than ActualInterval + 1 minute) or 1 otherwise',
+    type: 'function',
+  },
+  {
+    label: 'op_replace_nan',
+    detail: 'function',
+    info: 'Replaces vector component value with the second parameter `Value` if value is outdated (older than ActualInterval + 1 minute), third parameter is used to cut off values before now-`Ms` (milliseconds)',
+    type: 'function',
+  },
+  {
+    label: 'op_zero_if_none',
+    detail: 'function',
+    info: 'Replaces vector component value with 0 if it is empty',
+    type: 'function',
+  },
+  {
     label: 'pi',
     detail: 'function',
     info: 'Return pi',
