@@ -587,6 +587,30 @@ export const aggregateOpTerms = [
         type: 'keyword',
     },
     {
+        label: 'ok_top',
+        detail: 'aggregation',
+        info: 'Like TOPk, but returns top X metrics over requested time period',
+        type: 'keyword',
+    },
+    {
+        label: 'ok_cum_sum',
+        detail: 'aggregation',
+        info: 'Cumulative sum',
+        type: 'keyword',
+    },
+    {
+        label: 'op_top',
+        detail: 'aggregation',
+        info: 'Like TOPk, but returns top X metrics over requested time period',
+        type: 'keyword',
+    },
+    {
+        label: 'op_cum_sum',
+        detail: 'aggregation',
+        info: 'Cumulative sum',
+        type: 'keyword',
+    },
+    {
         label: 'quantile',
         detail: 'aggregation',
         info: 'Calculate φ-quantile (0 ≤ φ ≤ 1) over dimensions',
