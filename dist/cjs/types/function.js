@@ -352,7 +352,7 @@ var promqlFunctions = (_a = {},
     },
     _a[lezer_promql_1.OPReplaceNone] = {
         name: 'op_replace_nan',
-        argTypes: [ValueType.matrix, ValueType.scalar],
+        argTypes: [ValueType.matrix],
         variadic: 0,
         returnType: ValueType.vector,
     },
