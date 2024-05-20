@@ -330,7 +330,7 @@ const promqlFunctions = {
     },
     [OKReplaceNone]: {
         name: 'ok_replace_nan',
-        argTypes: [ValueType.matrix, ValueType.scalar, ValueType.string],
+        argTypes: [ValueType.matrix, ValueType.scalar, ValueType.scalar],
         variadic: 1,
         returnType: ValueType.vector,
     },
@@ -348,8 +348,8 @@ const promqlFunctions = {
     },
     [OPReplaceNone]: {
         name: 'op_replace_nan',
-        argTypes: [ValueType.matrix],
-        variadic: 0,
+        argTypes: [ValueType.matrix, ValueType.scalar, ValueType.scalar],
+        variadic: 1,
         returnType: ValueType.vector,
     },
     [OPZeroIfNone]: {
