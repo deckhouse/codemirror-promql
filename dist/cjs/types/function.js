@@ -335,7 +335,7 @@ var promqlFunctions = (_a = {},
     _a[lezer_promql_1.OKReplaceNone] = {
         name: 'ok_replace_nan',
         argTypes: [ValueType.matrix, ValueType.scalar, ValueType.scalar],
-        variadic: 0,
+        variadic: 1,
         returnType: ValueType.vector,
     },
     _a[lezer_promql_1.OKZeroIfNone] = {
@@ -353,7 +353,7 @@ var promqlFunctions = (_a = {},
     _a[lezer_promql_1.OPReplaceNone] = {
         name: 'op_replace_nan',
         argTypes: [ValueType.matrix, ValueType.scalar, ValueType.scalar],
-        variadic: 0,
+        variadic: 1,
         returnType: ValueType.vector,
     },
     _a[lezer_promql_1.OPZeroIfNone] = {
